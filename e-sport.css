@@ -1,0 +1,621 @@
+:root {
+    --neon-blue: #00f3ff;
+    --dark-matrix: #0a0a0a;
+    --hit-red: #ff003c;
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3b3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--dark-matrix);
+    color: var(--text-primary);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Header & Navigation */
+.cyber-header {
+    background: linear-gradient(45deg, #000 40%, var(--neon-blue));
+    padding: 1rem;
+    border-bottom: 3px solid var(--hit-red);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.cyber-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cyber-logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5em;
+    text-shadow: 0 0 15px var(--neon-blue);
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.cyber-nav a {
+    color: var(--text-primary);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    position: relative;
+}
+
+.cyber-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--neon-blue);
+    transition: width 0.3s ease;
+}
+
+.cyber-nav a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('assets/images/hero-bg.jpg') center/cover;
+    margin-bottom: 2rem;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 20px var(--neon-blue);
+}
+
+/* Team Grid */
+.team-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.team-grid h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--neon-blue);
+}
+
+.player-card {
+    background: #111;
+    border: 1px solid var(--neon-blue);
+    padding: 1.5rem;
+    border-radius: 10px;
+    transform: skewX(-5deg);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.player-card:hover {
+    transform: skewX(-5deg) scale(1.05);
+    box-shadow: 0 0 20px var(--neon-blue);
+}
+
+.player-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.player-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--neon-blue);
+}
+
+/* Stream Section */
+.stream-section {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stream-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--neon-blue);
+}
+
+.twitch-embed {
+    border: 3px solid var(--hit-red);
+    box-shadow: 0 0 30px rgba(255, 0, 60, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.twitch-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Team Page Styles */
+.team-header {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('assets/images/team-bg.jpg') center/cover;
+    margin-bottom: 2rem;
+}
+
+.player-achievements {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(0, 243, 255, 0.1);
+    border-radius: 5px;
+}
+
+.player-achievements h4 {
+    color: var(--neon-blue);
+    margin-bottom: 0.5rem;
+}
+
+.player-achievements ul {
+    list-style: none;
+    padding: 0;
+}
+
+.player-achievements li {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.team-stats {
+    padding: 2rem;
+    background: #111;
+    margin-top: 3rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 2rem;
+    background: var(--dark-matrix);
+    border: 1px solid var(--neon-blue);
+    border-radius: 10px;
+}
+
+.stat-card h3 {
+    font-size: 2.5rem;
+    color: var(--neon-blue);
+    margin-bottom: 0.5rem;
+}
+
+/* Stream Page Styles */
+.stream-header {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('assets/images/stream-bg.jpg') center/cover;
+    margin-bottom: 2rem;
+}
+
+.streams-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.main-stream {
+    margin-bottom: 3rem;
+}
+
+.stream-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stream-card {
+    background: #111;
+    border: 1px solid var(--neon-blue);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.twitch-embed.small {
+    padding-top: 40%;
+}
+
+.stream-info {
+    padding: 1rem;
+}
+
+.stream-schedule {
+    background: #111;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.schedule-day {
+    text-align: center;
+    padding: 1rem;
+    background: var(--dark-matrix);
+    border: 1px solid var(--neon-blue);
+    border-radius: 5px;
+}
+
+/* Tournament Page Styles */
+.tournaments-header {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('assets/images/tournaments-bg.jpg') center/cover;
+    margin-bottom: 2rem;
+}
+
+.tournament-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.tournament-card {
+    background: #111;
+    border: 1px solid var(--neon-blue);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.tournament-card:hover {
+    transform: translateY(-5px);
+}
+
+.tournament-banner {
+    position: relative;
+}
+
+.tournament-banner img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.tournament-date {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 0.5rem 1rem;
+    color: var(--neon-blue);
+}
+
+.tournament-info {
+    padding: 1.5rem;
+}
+
+.match-schedule ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.match-schedule li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.results-table {
+    padding: 2rem;
+}
+
+.tournament-result {
+    background: #111;
+    border: 1px solid var(--neon-blue);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.result-header {
+    background: var(--dark-matrix);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.placement {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.placement.first {
+    background: gold;
+    color: black;
+}
+
+.placement.second {
+    background: silver;
+    color: black;
+}
+
+.matches {
+    padding: 1rem;
+}
+
+.match {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.teams {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.team.winner {
+    color: var(--neon-blue);
+    font-weight: bold;
+}
+
+/* Shop Page Styles */
+.shop-header {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('assets/images/shop-bg.jpg') center/cover;
+    margin-bottom: 2rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.product-card {
+    background: #111;
+    border: 1px solid var(--neon-blue);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--hit-red);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.product-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-price {
+    font-size: 1.5rem;
+    color: var(--neon-blue);
+    margin: 1rem 0;
+}
+
+.product-sizes {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.size-btn {
+    background: none;
+    border: 1px solid var(--neon-blue);
+    color: white;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.size-btn:hover {
+    background: var(--neon-blue);
+    color: black;
+}
+
+.buy-btn {
+    width: 100%;
+    background: var(--neon-blue);
+    color: black;
+    border: none;
+    padding: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.buy-btn:hover {
+    background: var(--hit-red);
+    color: white;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.category-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 200px;
+    text-decoration: none;
+}
+
+.category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.category-card h3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 1rem;
+    margin: 0;
+    text-align: center;
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.offer-card {
+    background: #111;
+    border: 1px solid var(--hit-red);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.offer-price {
+    margin: 1rem 0;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #666;
+    margin-right: 1rem;
+}
+
+.discounted-price {
+    color: var(--hit-red);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Footer */
+.cyber-footer {
+    background: linear-gradient(45deg, var(--dark-matrix), #111);
+    padding: 2rem;
+    margin-top: 3rem;
+    border-top: 3px solid var(--neon-blue);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.social-links {
+    margin-bottom: 1rem;
+}
+
+.social-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--neon-blue);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cyber-nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        margin-top: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .player-card {
+        transform: none;
+    }
+
+    .player-card:hover {
+        transform: scale(1.05);
+    }
+}
